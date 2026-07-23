@@ -3,23 +3,66 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AJ Car Detailing — Best in the Business</title>
+<title>AJ Car Detailing — Mobile Auto Detailing in Mississauga &amp; the GTA</title>
+<meta name="description" content="Hand detailing that comes to you. Mississauga and across the GTA, 7 days a week. 5.0 stars across 195+ Google reviews. Call (416) 893-5986." />
+<meta name="theme-color" content="#111111" />
+
+<meta property="og:title" content="AJ Car Detailing — Mobile Auto Detailing in Mississauga &amp; the GTA" />
+<meta property="og:description" content="Hand detailing that comes to you. 5.0 stars across 195+ Google reviews. Open 7 days." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="./images/hero.webp" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDetailing",
+  "name": "AJ Car Detailing",
+  "image": "./images/hero.webp",
+  "telephone": "+1-416-893-5986",
+  "url": "https://ajcardetailing.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mississauga",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "areaServed": [
+    "Mississauga","Brampton","Oakville","Etobicoke","Toronto",
+    "Milton","Burlington","Vaughan","Markham","Oshawa"
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "19:00"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "195"
+  }
+}
+</script>
+
 <style>
   :root {
     --red: #d62828;
     --red-dark: #b91c1c;
     --black: #111111;
-    --dark: #1a1a1a;
+    --ink: #1a1a1a;
     --gray: #6b7280;
-    --gray-light: #f3f4f6;
+    --line: rgba(0,0,0,0.08);
+    --wash: #f4f4f5;
     --white: #ffffff;
+    --nav-h: 72px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
 
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -30,482 +73,550 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* NAV */
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .skip {
+    position: absolute; left: -9999px; top: 0; z-index: 100;
+    background: var(--red); color: #fff; padding: 12px 20px;
+    font-weight: 700; font-size: 14px; text-decoration: none;
+  }
+  .skip:focus { left: 8px; top: 8px; }
+
+  /* ---------- NAV ---------- */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 50;
-    padding: 0 48px;
-    height: 72px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(255,255,255,0.92);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    padding: 0 48px; height: var(--nav-h);
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(255,255,255,0);
+    border-bottom: 1px solid transparent;
+    transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+  nav.solid {
+    background: rgba(255,255,255,0.94);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom-color: var(--line);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
   }
   .logo {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 0.04em;
-    color: var(--black);
+    font-size: 28px; letter-spacing: 0.04em;
+    color: var(--white);
+    transition: color 0.35s ease;
   }
+  nav.solid .logo { color: var(--black); }
   .logo span { color: var(--red); }
   .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a {
-    color: var(--gray);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none; font-size: 14px; font-weight: 600;
     transition: color 0.3s;
   }
-  .nav-links a:hover { color: var(--black); }
+  nav.solid .nav-links a { color: var(--gray); }
+  .nav-links a:hover { color: var(--red); }
   .nav-cta {
-    background: var(--red) !important;
-    color: var(--white) !important;
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-weight: 700 !important;
-    font-size: 13px !important;
-    letter-spacing: 0.02em;
-    transition: all 0.3s !important;
-    text-decoration: none;
+    background: var(--red) !important; color: var(--white) !important;
+    padding: 10px 24px; border-radius: 8px;
+    font-weight: 700 !important; font-size: 13px !important;
+    letter-spacing: 0.02em; transition: all 0.3s !important; text-decoration: none;
   }
   .nav-cta:hover {
     background: var(--red-dark) !important;
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(214,40,40,0.25);
+    box-shadow: 0 8px 20px rgba(214,40,40,0.3);
   }
 
-  /* HERO */
+  /* ---------- HERO ---------- */
   .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+    position: relative; min-height: 100svh;
+    display: flex; align-items: center; overflow: hidden;
     background: var(--black);
   }
   .hero-bg {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: -6%;
     background: var(--black) url('./images/hero.webp') center/cover no-repeat;
-    filter: brightness(0.25);
+    filter: brightness(0.28) saturate(0.9);
+    will-change: transform;
+  }
+  .hero-veil {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(120% 90% at 12% 45%, rgba(214,40,40,0.16), transparent 60%),
+      linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%);
   }
   .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 140px 48px 100px;
-    max-width: 800px;
+    position: relative; z-index: 2;
+    padding: 140px 48px 120px; max-width: 820px;
   }
   .hero-tag {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--red);
-    background: rgba(214,40,40,0.1);
-    border: 1px solid rgba(214,40,40,0.25);
-    padding: 6px 16px;
-    border-radius: 4px;
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.7s 0.2s ease forwards;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--white);
+    background: rgba(214,40,40,0.16);
+    border: 1px solid rgba(214,40,40,0.4);
+    padding: 7px 16px; border-radius: 4px; margin-bottom: 24px;
+    opacity: 0; animation: fadeUp 0.7s 0.15s ease forwards;
+  }
+  .hero-tag .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #22c55e;
+    box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+    animation: pulse 2.4s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.55); }
+    70% { box-shadow: 0 0 0 9px rgba(34,197,94,0); }
+    100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
   }
   .hero h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(60px, 10vw, 120px);
-    line-height: 0.92;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.7s 0.4s ease forwards;
+    font-size: clamp(58px, 10vw, 124px);
+    line-height: 0.9; letter-spacing: 0.02em;
+    color: var(--white); margin-bottom: 22px;
   }
   .hero h1 .red { color: var(--red); }
   .hero h1 em { font-style: italic; display: block; transform: skewX(-6deg); }
+  .hero h1 .l1, .hero h1 .l2 { display: block; opacity: 0; }
+  .hero h1 .l1 { animation: fadeUp 0.75s 0.32s ease forwards; }
+  .hero h1 .l2 { animation: fadeUp 0.75s 0.44s ease forwards; }
   .hero-sub {
-    font-size: 18px;
-    color: rgba(255,255,255,0.6);
-    max-width: 460px;
-    margin-bottom: 40px;
-    font-weight: 500;
-    opacity: 0;
-    animation: fadeUp 0.7s 0.6s ease forwards;
+    font-size: 18px; color: rgba(255,255,255,0.68);
+    max-width: 470px; margin-bottom: 38px; font-weight: 500;
+    opacity: 0; animation: fadeUp 0.7s 0.6s ease forwards;
   }
   .hero-actions {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.7s 0.8s ease forwards;
+    display: flex; gap: 14px; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.7s 0.75s ease forwards;
   }
   .btn-red {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--red);
-    color: var(--white);
-    padding: 16px 36px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 15px;
-    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 9px;
+    background: var(--red); color: var(--white);
+    padding: 16px 34px; border-radius: 8px;
+    font-weight: 700; font-size: 15px; text-decoration: none;
     transition: all 0.3s;
   }
   .btn-red:hover {
-    background: var(--red-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(214,40,40,0.35);
+    background: var(--red-dark); transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(214,40,40,0.4);
   }
   .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    color: var(--white);
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--white); padding: 16px 30px; border-radius: 8px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.22); transition: all 0.3s;
   }
   .btn-outline:hover {
-    border-color: rgba(255,255,255,0.5);
-    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.55);
+    background: rgba(255,255,255,0.06);
   }
+  .hero-trust {
+    margin-top: 34px; display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 600;
+    opacity: 0; animation: fadeUp 0.7s 0.9s ease forwards;
+  }
+  .hero-trust .stars { color: #fbbf24; letter-spacing: 2px; font-size: 14px; }
+
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
+    from { opacity: 0; transform: translateY(26px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* STATS */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-  .stat {
-    text-align: center;
-    padding: 40px 24px;
-    border-right: 1px solid rgba(0,0,0,0.06);
-  }
-  .stat:last-child { border-right: none; }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 44px;
-    color: var(--black);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .stat-num .red { color: var(--red); }
-  .stat-label {
-    font-size: 13px;
-    color: var(--gray);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.75s ease, transform 0.75s ease; }
+  .reveal.in { opacity: 1; transform: none; }
 
-  /* GALLERY */
-  .gallery {
-    padding: 100px 48px 80px;
-  }
+  /* ---------- SHARED SECTION BITS ---------- */
+  .wrap { max-width: 1180px; margin: 0 auto; }
   .section-tag {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--red);
-    margin-bottom: 12px;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 12px;
   }
   .section-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1;
-    letter-spacing: 0.02em;
-    margin-bottom: 48px;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1; letter-spacing: 0.02em; margin-bottom: 14px;
   }
+  .section-lede {
+    font-size: 16px; color: var(--gray); font-weight: 500;
+    max-width: 540px; margin-bottom: 48px;
+  }
+
+  /* ---------- STATS ---------- */
+  .stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--line);
+  }
+  .stat { text-align: center; padding: 40px 24px; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 46px; color: var(--black); line-height: 1; margin-bottom: 4px;
+  }
+  .stat-num .red { color: var(--red); }
+  .stat-label {
+    font-size: 12px; color: var(--gray); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+  }
+
+  /* ---------- BEFORE / AFTER (signature) ---------- */
+  .ba-section { padding: 100px 48px; }
+  .ba {
+    position: relative; width: 100%; aspect-ratio: 16 / 9;
+    border-radius: 16px; overflow: hidden; background: var(--wash);
+    user-select: none; touch-action: pan-y;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+  }
+  .ba img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; pointer-events: none;
+  }
+  .ba .after-layer {
+    position: absolute; inset: 0;
+    clip-path: inset(0 0 0 var(--pos, 50%));
+  }
+  .ba-badge {
+    position: absolute; top: 18px; z-index: 3;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--white);
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
+    padding: 7px 14px; border-radius: 4px;
+  }
+  .ba-badge.b { left: 18px; }
+  .ba-badge.a { right: 18px; background: rgba(214,40,40,0.85); }
+  .ba-line {
+    position: absolute; top: 0; bottom: 0; z-index: 4;
+    left: var(--pos, 50%); width: 3px; background: var(--white);
+    transform: translateX(-50%);
+    box-shadow: 0 0 18px rgba(0,0,0,0.45);
+    pointer-events: none;
+  }
+  .ba-knob {
+    position: absolute; top: 50%; left: var(--pos, 50%); z-index: 5;
+    transform: translate(-50%, -50%);
+    width: 54px; height: 54px; border-radius: 50%;
+    background: var(--white); color: var(--black);
+    display: grid; place-items: center;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+    font-size: 15px; font-weight: 800; letter-spacing: -1px;
+    pointer-events: none;
+  }
+  .ba-range {
+    position: absolute; inset: 0; z-index: 6;
+    width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize;
+    -webkit-appearance: none; appearance: none; background: transparent;
+  }
+  .ba-range::-webkit-slider-thumb { -webkit-appearance: none; width: 60px; height: 100%; }
+  .ba-range::-moz-range-thumb { width: 60px; height: 100%; border: 0; background: transparent; }
+  .ba-hint {
+    margin-top: 14px; font-size: 13px; color: var(--gray); font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  /* ---------- AREA MARQUEE ---------- */
+  .marquee {
+    background: var(--black); color: var(--white);
+    padding: 18px 0; overflow: hidden;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .marquee-track {
+    display: flex; width: max-content;
+    animation: slide 34s linear infinite;
+  }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee-track span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px; letter-spacing: 0.06em;
+    padding: 0 26px; white-space: nowrap; color: rgba(255,255,255,0.85);
+  }
+  .marquee-track span i { color: var(--red); font-style: normal; padding-left: 26px; }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- GALLERY ---------- */
+  .gallery { padding: 100px 48px 90px; }
   .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 300px 300px;
-    gap: 12px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px 300px; gap: 12px;
   }
   .gallery-item {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
+    position: relative; border-radius: 14px; overflow: hidden;
+    cursor: zoom-in; border: 0; padding: 0; background: var(--wash);
+    display: block; width: 100%; height: 100%;
   }
   .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.2,0.6,0.2,1);
   }
-  .gallery-item:hover img { transform: scale(1.06); }
+  .gallery-item:hover img { transform: scale(1.07); }
   .gallery-label {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 20px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.65));
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-  }
-  .gallery-label .num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    color: var(--red);
-  }
-  .gallery-label .name {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--white);
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 20px; text-align: left;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    font-size: 14px; font-weight: 700; color: var(--white);
   }
   .g1 { grid-column: 1 / 3; grid-row: 1; }
   .g2 { grid-column: 3; grid-row: 1; }
   .g3 { grid-column: 1; grid-row: 2; }
   .g4 { grid-column: 2 / 4; grid-row: 2; }
 
-  /* PACKAGES */
-  .packages-section {
-    padding: 100px 48px;
-    background: var(--gray-light);
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 90;
+    background: rgba(0,0,0,0.94);
+    display: none; place-items: center; padding: 32px;
   }
+  .lightbox.open { display: grid; }
+  .lightbox img { max-width: 100%; max-height: 88vh; border-radius: 10px; }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 24px;
+    background: none; border: 0; color: var(--white);
+    font-size: 34px; line-height: 1; cursor: pointer; padding: 8px;
+  }
+
+  /* ---------- PACKAGES ---------- */
+  .packages-section { padding: 100px 48px; background: var(--wash); }
   .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; align-items: stretch;
   }
   .pkg {
-    background: var(--white);
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 16px;
-    padding: 36px 32px;
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: 16px; padding: 36px 32px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex; flex-direction: column;
   }
-  .pkg:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 48px rgba(0,0,0,0.08);
-  }
-  .pkg.featured {
-    border: 2px solid var(--red);
-    position: relative;
-  }
+  .pkg:hover { transform: translateY(-6px); box-shadow: 0 22px 50px rgba(0,0,0,0.09); }
+  .pkg.featured { border: 2px solid var(--red); position: relative; }
   .pkg-popular {
-    position: absolute;
-    top: -13px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--red);
-    color: var(--white);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 5px 18px;
-    border-radius: 20px;
-    white-space: nowrap;
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    background: var(--red); color: var(--white);
+    font-size: 11px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 5px 18px; border-radius: 20px; white-space: nowrap;
   }
   .pkg-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    letter-spacing: 0.03em;
-    margin-bottom: 4px;
+    font-size: 30px; letter-spacing: 0.03em; margin-bottom: 4px;
   }
-  .pkg-price {
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--red);
-    margin-bottom: 2px;
-    line-height: 1;
-  }
-  .pkg-note {
-    font-size: 13px;
-    color: var(--gray);
-    margin-bottom: 24px;
-    font-weight: 500;
-  }
-  .pkg-divider {
-    height: 1px;
-    background: rgba(0,0,0,0.06);
-    margin-bottom: 24px;
-  }
-  .pkg-list {
-    list-style: none;
-    flex: 1;
-    margin-bottom: 28px;
-  }
+  .pkg-note { font-size: 13px; color: var(--gray); margin-bottom: 24px; font-weight: 600; }
+  .pkg-divider { height: 1px; background: var(--line); margin-bottom: 24px; }
+  .pkg-list { list-style: none; flex: 1; margin-bottom: 28px; }
   .pkg-list li {
-    font-size: 14px;
-    color: var(--dark);
-    padding: 7px 0;
-    padding-left: 22px;
-    position: relative;
-    font-weight: 500;
+    font-size: 14px; color: var(--ink); padding: 7px 0 7px 24px;
+    position: relative; font-weight: 500;
   }
   .pkg-list li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--red);
-    font-weight: 700;
-    font-size: 13px;
+    content: '✓'; position: absolute; left: 0;
+    color: var(--red); font-weight: 800; font-size: 13px;
   }
   .pkg-cta {
-    display: block;
-    text-align: center;
-    padding: 14px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration: none;
-    transition: all 0.3s;
-    border: 2px solid rgba(0,0,0,0.1);
-    color: var(--black);
+    display: block; text-align: center; padding: 14px;
+    border-radius: 10px; font-weight: 700; font-size: 14px;
+    text-decoration: none; transition: all 0.3s;
+    border: 2px solid rgba(0,0,0,0.12); color: var(--black);
   }
-  .pkg-cta:hover {
-    border-color: var(--red);
-    color: var(--red);
-  }
-  .pkg.featured .pkg-cta {
-    background: var(--red);
-    color: var(--white);
-    border-color: var(--red);
-  }
-  .pkg.featured .pkg-cta:hover {
-    background: var(--red-dark);
-    border-color: var(--red-dark);
-  }
+  .pkg-cta:hover { border-color: var(--red); color: var(--red); }
+  .pkg.featured .pkg-cta { background: var(--red); color: var(--white); border-color: var(--red); }
+  .pkg.featured .pkg-cta:hover { background: var(--red-dark); border-color: var(--red-dark); }
 
-  /* CTA */
+  /* ---------- REVIEWS ---------- */
+  .reviews { padding: 100px 48px; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+    gap: 20px;
+  }
+  .review {
+    border: 1px solid var(--line); border-radius: 14px;
+    padding: 26px 24px; background: var(--white);
+    display: flex; flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .review:hover {
+    transform: translateY(-4px);
+    border-color: rgba(214,40,40,0.3);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+  }
+  .review-stars { color: #fbbf24; letter-spacing: 2px; font-size: 14px; margin-bottom: 12px; }
+  .review-text {
+    font-size: 15px; color: var(--ink); font-weight: 500; line-height: 1.55;
+    flex: 1; margin-bottom: 20px;
+  }
+  .review-author { display: flex; align-items: center; gap: 11px; }
+  .review-avatar {
+    width: 36px; height: 36px; border-radius: 50%; flex: none;
+    background: var(--red); color: var(--white);
+    display: grid; place-items: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 17px; letter-spacing: 0.04em;
+  }
+  .review-who { font-size: 13.5px; font-weight: 700; color: var(--black); line-height: 1.25; }
+  .review-src { font-size: 11px; color: var(--gray); font-weight: 600; letter-spacing: 0.04em; }
+  .reviews-cta {
+    margin-top: 32px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    font-size: 14px; color: var(--gray); font-weight: 600;
+  }
+  .reviews-cta a { color: var(--red); font-weight: 700; text-decoration: none; }
+  .reviews-cta a:hover { text-decoration: underline; }
+
+  /* ---------- FAQ ---------- */
+  .faq { padding: 100px 48px; background: var(--wash); }
+  .faq-list { max-width: 780px; }
+  .faq details {
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+  }
+  .faq summary {
+    cursor: pointer; list-style: none;
+    padding: 22px 40px 22px 0; position: relative;
+    font-size: 17px; font-weight: 700; color: var(--black);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: '+'; position: absolute; right: 6px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 26px; font-weight: 400; color: var(--red); line-height: 1;
+    transition: transform 0.3s ease;
+  }
+  .faq details[open] summary::after { content: '−'; }
+  .faq-body { padding: 0 40px 24px 0; font-size: 15px; color: var(--gray); font-weight: 500; }
+
+  /* ---------- CTA ---------- */
   .cta-section {
-    padding: 120px 48px;
-    text-align: center;
-    background: var(--black);
-    color: var(--white);
+    padding: 120px 48px; text-align: center;
+    background: var(--black); color: var(--white);
+    position: relative; overflow: hidden;
   }
-  .cta-section .section-title {
-    color: var(--white);
-    margin-bottom: 16px;
+  .cta-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(70% 100% at 50% 0%, rgba(214,40,40,0.22), transparent 70%);
   }
+  .cta-inner { position: relative; z-index: 2; }
+  .cta-section .section-title { color: var(--white); margin-bottom: 16px; }
   .cta-section .section-title .red { color: var(--red); }
-  .cta-sub {
-    font-size: 17px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 40px;
-    font-weight: 500;
-  }
+  .cta-sub { font-size: 17px; color: rgba(255,255,255,0.55); margin-bottom: 36px; font-weight: 500; }
   .cta-phone {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(28px, 4vw, 48px);
-    color: var(--white);
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 36px;
-    letter-spacing: 0.04em;
-    transition: color 0.3s;
+    font-size: clamp(30px, 4vw, 50px); color: var(--white);
+    text-decoration: none; display: inline-block; margin-bottom: 30px;
+    letter-spacing: 0.04em; transition: color 0.3s;
   }
   .cta-phone:hover { color: var(--red); }
-  .cta-details {
-    font-size: 14px;
-    color: rgba(255,255,255,0.4);
-    font-weight: 500;
-  }
+  .cta-details { font-size: 14px; color: rgba(255,255,255,0.4); font-weight: 500; }
 
-  /* FOOTER */
+  /* ---------- FOOTER ---------- */
   footer {
-    padding: 40px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-    border-top: 1px solid rgba(0,0,0,0.06);
+    padding: 40px 48px 96px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px; border-top: 1px solid var(--line);
   }
-  footer .logo { font-size: 22px; }
-  .footer-info {
-    font-size: 13px;
-    color: var(--gray);
-    font-weight: 500;
+  footer .logo { font-size: 22px; color: var(--black); }
+  .footer-info { font-size: 13px; color: var(--gray); font-weight: 500; }
+
+  /* ---------- STICKY CALL BAR (mobile) ---------- */
+  .callbar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    display: none; padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(17,17,17,0.96);
+    backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .callbar a {
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    background: var(--red); color: var(--white);
+    padding: 15px; border-radius: 10px;
+    font-weight: 800; font-size: 16px; text-decoration: none;
   }
 
-  /* RESPONSIVE */
+  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 960px) {
-    nav { padding: 0 24px; }
+    nav { padding: 0 20px; }
     .nav-links a:not(.nav-cta) { display: none; }
-    .hero-content { padding: 120px 24px 80px; }
+    .hero-content { padding: 120px 20px 90px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
-    .stat { border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .gallery { padding: 80px 24px 60px; }
-    .gallery-grid {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 220px 220px 220px;
-      gap: 10px;
-    }
+    .stat { border-bottom: 1px solid var(--line); }
+    .ba-section { padding: 70px 20px; }
+    .ba { aspect-ratio: 4 / 3; }
+    .gallery { padding: 70px 20px 60px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px 220px; gap: 10px; }
     .g1 { grid-column: 1 / 3; grid-row: 1; }
     .g2 { grid-column: 1; grid-row: 2; }
     .g3 { grid-column: 2; grid-row: 2; }
     .g4 { grid-column: 1 / 3; grid-row: 3; }
-    .packages-section { padding: 80px 24px; }
-    .packages-grid { grid-template-columns: 1fr; gap: 28px; }
-    .cta-section { padding: 80px 24px; }
-    footer { padding: 32px 24px; }
+    .packages-section { padding: 70px 20px; }
+    .packages-grid { grid-template-columns: 1fr; gap: 26px; }
+    .reviews { padding: 70px 20px; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .faq { padding: 70px 20px; }
+    .cta-section { padding: 80px 20px; }
+    footer { padding: 32px 20px 96px; }
+    .callbar { display: block; }
   }
   @media (max-width: 600px) {
-    .gallery-grid {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, 240px);
-    }
-    .g1 { grid-column: 1; grid-row: 1; }
-    .g2 { grid-column: 1; grid-row: 2; }
-    .g3 { grid-column: 1; grid-row: 3; }
-    .g4 { grid-column: 1; grid-row: 4; }
+    .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 230px); }
+    .g1, .g2, .g3, .g4 { grid-column: 1; }
+    .g1 { grid-row: 1; } .g2 { grid-row: 2; } .g3 { grid-row: 3; } .g4 { grid-row: 4; }
     .stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; }
+    .hero-tag, .hero h1 .l1, .hero h1 .l2, .hero-sub, .hero-actions, .hero-trust { opacity: 1; }
   }
 </style>
 </head>
 <body>
 
-<nav>
+<a href="#main" class="skip">Skip to content</a>
+
+<nav id="nav">
   <div class="logo">AJ <span>DETAILING</span></div>
   <div class="nav-links">
+    <a href="#work">Our Work</a>
     <a href="#packages">Packages</a>
-    <a href="#gallery">Our Work</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
     <a href="tel:+14168935986" class="nav-cta">Call to Book</a>
   </div>
 </nav>
 
+<main id="main">
+
 <section class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-veil"></div>
   <div class="hero-content">
-    <div class="hero-tag">Mississauga's #1 Auto Detailing</div>
-    <h1><em>BEST IN<br>THE <span class="red">BUSINESS.</span></em></h1>
-    <p class="hero-sub">Showroom-grade detailing done by hand. 5.0★ rated across 193+ Google reviews. Open 7 days.</p>
+    <div class="hero-tag"><span class="dot"></span> Open today · 9 AM – 7 PM</div>
+    <h1><em><span class="l1">BEST IN</span><span class="l2">THE <span class="red">BUSINESS.</span></span></em></h1>
+    <p class="hero-sub">Hand detailing that comes to you. Mississauga and across the GTA, seven days a week.</p>
     <div class="hero-actions">
       <a href="tel:+14168935986" class="btn-red">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         (416) 893-5986
       </a>
-      <a href="#packages" class="btn-outline">View Packages ↓</a>
+      <a href="#work" class="btn-outline">See the difference ↓</a>
+    </div>
+    <div class="hero-trust">
+      <span class="stars">★★★★★</span> 5.0 across 195+ Google reviews
     </div>
   </div>
 </section>
 
 <div class="stats">
   <div class="stat">
-    <div class="stat-num">5.0<span class="red">★</span></div>
+    <div class="stat-num"><span data-count="5.0" data-dec="1">5.0</span><span class="red">★</span></div>
     <div class="stat-label">Google Rating</div>
   </div>
   <div class="stat">
-    <div class="stat-num">193<span class="red">+</span></div>
+    <div class="stat-num"><span data-count="195">195</span><span class="red">+</span></div>
     <div class="stat-label">Reviews</div>
   </div>
   <div class="stat">
@@ -514,118 +625,379 @@
   </div>
   <div class="stat">
     <div class="stat-num">GTA</div>
-    <div class="stat-label">Mobile Service</div>
+    <div class="stat-label">We Come to You</div>
+  </div>
+</div>
+
+<!-- SIGNATURE: before / after -->
+<section class="ba-section" id="work">
+  <div class="wrap reveal">
+    <div class="section-tag">Before &amp; After</div>
+    <h2 class="section-title">DRAG IT.<br>SEE THE DIFFERENCE.</h2>
+    <p class="section-lede">Same car, same day. Pull the handle across to see what a full detail actually does.</p>
+
+    <div class="ba" id="ba" style="--pos:50%">
+      <img src="./images/preview-2.webp" alt="Car interior before detailing" loading="lazy" />
+      <div class="after-layer">
+        <img src="./images/preview-1.webp" alt="Car interior after detailing" loading="lazy" />
+      </div>
+      <span class="ba-badge b">Before</span>
+      <span class="ba-badge a">After</span>
+      <div class="ba-line"></div>
+      <div class="ba-knob">‹ ›</div>
+      <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50"
+             aria-label="Drag to compare before and after detailing" />
+    </div>
+    <p class="ba-hint">← Drag the handle, or use your arrow keys</p>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Service areas">
+  <div class="marquee-track" id="marquee">
+    <span>Mississauga<i>/</i></span><span>Brampton<i>/</i></span><span>Oakville<i>/</i></span>
+    <span>Etobicoke<i>/</i></span><span>Toronto<i>/</i></span><span>Milton<i>/</i></span>
+    <span>Burlington<i>/</i></span><span>Vaughan<i>/</i></span><span>Markham<i>/</i></span>
+    <span>Oshawa<i>/</i></span>
   </div>
 </div>
 
 <section class="gallery" id="gallery">
-  <div class="section-tag">Our Work</div>
-  <h2 class="section-title">RESULTS SPEAK<br>FOR THEMSELVES.</h2>
-  <div class="gallery-grid">
-    <div class="gallery-item g1">
-      <img src="./images/preview.webp" alt="Car Exterior Detail" loading="lazy" />
-      <div class="gallery-label">
-        <span class="num">01</span>
-        <span class="name">Exterior Detail</span>
-      </div>
-    </div>
-    <div class="gallery-item g2">
-      <img src="./images/preview-1.webp" alt="Interior Detail" loading="lazy" />
-      <div class="gallery-label">
-        <span class="num">02</span>
-        <span class="name">Interior Detail</span>
-      </div>
-    </div>
-    <div class="gallery-item g3">
-      <img src="./images/preview-2.webp" alt="Floor Mats" loading="lazy" />
-      <div class="gallery-label">
-        <span class="num">03</span>
-        <span class="name">Floor & Mats</span>
-      </div>
-    </div>
-    <div class="gallery-item g4">
-      <img src="./images/preview-3.webp" alt="Dashboard Detail" loading="lazy" />
-      <div class="gallery-label">
-        <span class="num">04</span>
-        <span class="name">Dashboard Detail</span>
-      </div>
+  <div class="wrap reveal">
+    <div class="section-tag">Our Work</div>
+    <h2 class="section-title">RESULTS SPEAK<br>FOR THEMSELVES.</h2>
+    <p class="section-lede">Every car below was done by hand, on site. Tap any photo to view it full size.</p>
+    <div class="gallery-grid">
+      <button class="gallery-item g1" data-full="./images/preview.webp">
+        <img src="./images/preview.webp" alt="Exterior paint after detailing" loading="lazy" />
+        <span class="gallery-label">Exterior Detail</span>
+      </button>
+      <button class="gallery-item g2" data-full="./images/preview-1.webp">
+        <img src="./images/preview-1.webp" alt="Vehicle interior after detailing" loading="lazy" />
+        <span class="gallery-label">Interior Detail</span>
+      </button>
+      <button class="gallery-item g3" data-full="./images/preview-2.webp">
+        <img src="./images/preview-2.webp" alt="Cleaned floor mats" loading="lazy" />
+        <span class="gallery-label">Floor &amp; Mats</span>
+      </button>
+      <button class="gallery-item g4" data-full="./images/preview-3.webp">
+        <img src="./images/preview-3.webp" alt="Dashboard after detailing" loading="lazy" />
+        <span class="gallery-label">Dashboard Detail</span>
+      </button>
     </div>
   </div>
 </section>
 
 <section class="packages-section" id="packages">
-  <div style="max-width:1100px;margin:0 auto;">
+  <div class="wrap reveal">
     <div class="section-tag">Packages</div>
     <h2 class="section-title">PICK YOUR LEVEL<br>OF CLEAN.</h2>
+    <p class="section-lede">Every package is priced on the vehicle and its condition. Call and we'll quote it in two minutes.</p>
+    <div class="packages-grid">
+      <div class="pkg">
+        <h3 class="pkg-name">Silver</h3>
+        <div class="pkg-note">About 1.5 hours</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>Full hand wash &amp; dry</li>
+          <li>Wheel &amp; tire cleaning + shine</li>
+          <li>Windows inside &amp; out</li>
+          <li>Interior vacuum &amp; wipe</li>
+          <li>Dashboard &amp; console clean</li>
+          <li>Air freshener</li>
+        </ul>
+        <a href="tel:+14168935986" class="pkg-cta">Call for a Quote</a>
+      </div>
+      <div class="pkg featured">
+        <span class="pkg-popular">Most Popular</span>
+        <h3 class="pkg-name">Gold</h3>
+        <div class="pkg-note">About 3–4 hours</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>Everything in Silver</li>
+          <li>Hand wax — 3 month protection</li>
+          <li>Full interior shampoo</li>
+          <li>Leather clean &amp; condition</li>
+          <li>Steam-cleaned vents &amp; crevices</li>
+          <li>Door jambs detailed</li>
+        </ul>
+        <a href="tel:+14168935986" class="pkg-cta">Call for a Quote</a>
+      </div>
+      <div class="pkg">
+        <h3 class="pkg-name">Platinum</h3>
+        <div class="pkg-note">Full day</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li>Everything in Gold</li>
+          <li>Paint correction — swirl removal</li>
+          <li>Clay bar treatment</li>
+          <li>Engine bay detailing</li>
+          <li>Full leather restoration</li>
+          <li>Exterior trim restoration</li>
+          <li>Wheel barrel deep clean</li>
+        </ul>
+        <a href="tel:+14168935986" class="pkg-cta">Call for a Quote</a>
+      </div>
+    </div>
   </div>
-  <div class="packages-grid">
-    <div class="pkg">
-      <h3 class="pkg-name">Silver</h3>
-      <div class="pkg-price">$99</div>
-      <div class="pkg-note">Starting price · ~1.5 hours</div>
-      <div class="pkg-divider"></div>
-      <ul class="pkg-list">
-        <li>Full hand wash & dry</li>
-        <li>Wheel & tire cleaning + shine</li>
-        <li>Windows inside & out</li>
-        <li>Interior vacuum & wipe</li>
-        <li>Dashboard & console clean</li>
-        <li>Air freshener</li>
-      </ul>
-      <a href="tel:+14168935986" class="pkg-cta">Call to Book</a>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap reveal">
+    <div class="section-tag">Reviews</div>
+    <h2 class="section-title">195 REVIEWS.<br>NOT ONE UNDER FIVE STARS.</h2>
+    <p class="section-lede">Straight from Google.</p>
+    <div class="reviews-grid">
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">The reviews and photos before me are completely accurate. The guy was really nice and I would 100% go to him again and recommend him to others. The seats were covered in dog fur, dog drool, juice stains, etc. and he got them all right out. Amazing work.</p>
+        <div class="review-author">
+          <div class="review-avatar">J</div>
+          <div>
+            <div class="review-who">Jennifer D.</div>
+            <div class="review-src">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">AJ provides excellent service for a good price. I was astonished at how shiny my car looked when I picked it up. My car looks like its been renewed or at least restored. My rims haven't looked as clean as they do now since my first year owning the vehicle. Thank you for the awesome service &amp; exceptional attention to detail!</p>
+        <div class="review-author">
+          <div class="review-avatar">K</div>
+          <div>
+            <div class="review-who">Kaspy K.</div>
+            <div class="review-src">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">The pictures don't do his work justice, my Mustang was practically sparkling after I received it back from him. Will definitely repeat!</p>
+        <div class="review-author">
+          <div class="review-avatar">F</div>
+          <div>
+            <div class="review-who">Farzan A.</div>
+            <div class="review-src">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Bought a used car recently and brought it to AJ for engine detailing. AJ did an incredible job and the engine bay looks like new now. His passion to the work is amazing, I would definitely recommend him for car detailing!</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div>
+            <div class="review-who">Dhinakaran S.</div>
+            <div class="review-src">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">My car was so overdue for a cleaning&hellip; The interior of my car was a disaster. I gave the car to AJ and after his magic the car looks like brand new. I was amazed at the great job he did. It looks like I just purchased the car and drove it off the lot.</p>
+        <div class="review-author">
+          <div class="review-avatar">E</div>
+          <div>
+            <div class="review-who">Edyta S.</div>
+            <div class="review-src">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">He will clean your car like hes own car. I was shocked when I saw my car super clean from outside, interior and specially the engine&hellip; You won't get disappointed. And he is very friendly too. Just bring your car and he will take care of it. HIGHLY RECOMMENDED</p>
+        <div class="review-author">
+          <div class="review-avatar">D</div>
+          <div>
+            <div class="review-who">Deonn R.</div>
+            <div class="review-src">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Wonderful experience. Made my car looks brand new. AJ enjoy what he does and put 100% to his work. I really recommend AJ car detailing to others and will visit him again.</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <div>
+            <div class="review-who">Shinto A.</div>
+            <div class="review-src">Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">My car was very overdue for a cleaning and AJ left it looking great inside and out. I'll definitely return for another cleaning when needed.</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-who">Adrianna C.</div>
+            <div class="review-src">Google Review</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="pkg featured">
-      <span class="pkg-popular">Most Popular</span>
-      <h3 class="pkg-name">Gold</h3>
-      <div class="pkg-price">$199</div>
-      <div class="pkg-note">Starting price · ~3–4 hours</div>
-      <div class="pkg-divider"></div>
-      <ul class="pkg-list">
-        <li>Everything in Silver</li>
-       <li>Hand wax — 3 month protection</li>
-        <li>Full interior shampoo</li>
-        <li>Leather clean & condition</li>
-        <li>Steam-cleaned vents & crevices</li>
-        <li>Door jambs detailed</li>
-      </ul>
-      <a href="tel:+14168935986" class="pkg-cta">Call to Book</a>
+    <div class="reviews-cta">
+      <span>Want to see all of them?</span>
+      <a href="#" id="gmbLink">Read the reviews on Google →</a>
     </div>
-    <div class="pkg">
-      <h3 class="pkg-name">Platinum</h3>
-      <div class="pkg-price">$299</div>
-      <div class="pkg-note">Starting price · Full day</div>
-      <div class="pkg-divider"></div>
-      <ul class="pkg-list">
-        <li>Everything in Gold</li>
-        <li>Paint correction — swirl removal</li>
-        <li>Clay Bar treatment</li>
-        <li>Engine bay detailing</li>
-        <li>Full leather restoration</li>
-        <li>Exterior trim restoration</li>
-        <li>Wheel barrel deep clean</li>
-      </ul>
-      <a href="tel:+14168935986" class="pkg-cta">Call to Book</a>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap reveal">
+    <div class="section-tag">Questions</div>
+    <h2 class="section-title">BEFORE YOU CALL.</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Do you come to me?</summary>
+        <div class="faq-body">Yes. We're fully mobile across Mississauga and the GTA — driveway, condo garage, or office parking lot. Tell us where the car will be when you call.</div>
+      </details>
+      <details>
+        <summary>Do you need my water or power?</summary>
+        <div class="faq-body">No. We bring our own water and power, so we can work anywhere the car is parked.</div>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <div class="faq-body">Silver runs about an hour and a half. Gold is three to four hours. Platinum is a full day. Condition and vehicle size can move those numbers.</div>
+      </details>
+      <details>
+        <summary>What does it cost?</summary>
+        <div class="faq-body">Price depends on the vehicle, the package, and how much work the car actually needs. Call and describe the car — we'll quote it on the spot.</div>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <div class="faq-body">Cash, e-transfer, or card on completion.</div>
+      </details>
+      <details>
+        <summary>How far ahead should I book?</summary>
+        <div class="faq-body">Weekends fill first. Two or three days ahead is usually enough, and same-day is often possible mid-week.</div>
+      </details>
     </div>
   </div>
 </section>
 
 <section class="cta-section">
-  <div class="section-tag" style="color:var(--red);">Ready?</div>
-  <h2 class="section-title">LET'S MAKE IT<br><span class="red">SPOTLESS.</span></h2>
-  <p class="cta-sub">Call to book. Mississauga & GTA. Open 7 days, 9 AM – 7 PM.</p>
-  <a href="tel:+14168935986" class="cta-phone">(416) 893-5986</a>
-  <br>
-  <a href="tel:+14168935986" class="btn-red" style="margin-top:8px;">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call to Book Now
-  </a>
-  <p class="cta-details" style="margin-top:24px;">Mississauga, ON · Mobile service available across the GTA</p>
+  <div class="cta-inner">
+    <div class="section-tag">Ready?</div>
+    <h2 class="section-title">LET'S MAKE IT<br><span class="red">SPOTLESS.</span></h2>
+    <p class="cta-sub">Call to book. Mississauga &amp; GTA. Open 7 days, 9 AM – 7 PM.</p>
+    <a href="tel:+14168935986" class="cta-phone">(416) 893-5986</a>
+    <br>
+    <a href="tel:+14168935986" class="btn-red" style="margin-top:4px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call to Book Now
+    </a>
+    <p class="cta-details" style="margin-top:24px;">Mississauga, ON · Mobile service across the GTA</p>
+  </div>
 </section>
+
+</main>
 
 <footer>
   <div class="logo">AJ <span>DETAILING</span></div>
   <div class="footer-info">© 2026 AJ Car Detailing · Mississauga, ON · (416) 893-5986</div>
 </footer>
+
+<div class="callbar">
+  <a href="tel:+14168935986">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call (416) 893-5986
+  </a>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lbClose" aria-label="Close photo">&times;</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* nav background on scroll */
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('solid', window.scrollY > 40);
+    if (!reduce) {
+      var bg = document.getElementById('heroBg');
+      if (bg && window.scrollY < window.innerHeight) {
+        bg.style.transform = 'translateY(' + (window.scrollY * 0.18) + 'px)';
+      }
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* scroll reveal */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  /* stat count-up */
+  var counted = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      counted.unobserve(el);
+      var target = parseFloat(el.dataset.count);
+      var dec = parseInt(el.dataset.dec || '0', 10);
+      if (reduce) { el.textContent = target.toFixed(dec); return; }
+      var start = performance.now(), dur = 1100;
+      function step(now) {
+        var p = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = (target * eased).toFixed(dec);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(function (el) { counted.observe(el); });
+
+  /* before / after */
+  var ba = document.getElementById('ba');
+  var range = document.getElementById('baRange');
+  if (ba && range) {
+    range.addEventListener('input', function () {
+      ba.style.setProperty('--pos', range.value + '%');
+    });
+  }
+
+  /* marquee: duplicate track so the loop is seamless */
+  var mq = document.getElementById('marquee');
+  if (mq) { mq.innerHTML += mq.innerHTML; }
+
+  /* lightbox */
+  var lb = document.getElementById('lightbox'),
+      lbImg = document.getElementById('lbImg'),
+      lbClose = document.getElementById('lbClose'),
+      lastFocus = null;
+  document.querySelectorAll('.gallery-item').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      lastFocus = btn;
+      lbImg.src = btn.dataset.full;
+      lbImg.alt = btn.querySelector('img').alt;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    });
+  });
+  function closeLb() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+  lbClose.addEventListener('click', closeLb);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeLb();
+  });
+})();
+</script>
 
 </body>
 </html>

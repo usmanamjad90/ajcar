@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AJ Car Detailing — Mobile Auto Detailing in Mississauga &amp; the GTA</title>
-<meta name="description" content="Hand detailing that comes to you. Mississauga and across the GTA, 7 days a week. 5.0 stars across 195+ Google reviews. Call (416) 893-5986." />
+<title>AJ Car Detailing — Hand Detailing in Mississauga &amp; the GTA</title>
+<meta name="description" content="World-class hand detailing servicing Mississauga and the GTA. 5.0 stars across 195+ Google reviews. Open 7 days. Call (416) 893-5986." />
 <meta name="theme-color" content="#111111" />
 
 <meta property="og:title" content="AJ Car Detailing — Mobile Auto Detailing in Mississauga &amp; the GTA" />
-<meta property="og:description" content="Hand detailing that comes to you. 5.0 stars across 195+ Google reviews. Open 7 days." />
+<meta property="og:description" content="World-class hand detailing servicing Mississauga and the GTA. 5.0 stars across 195+ Google reviews." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="./images/hero.webp" />
 
@@ -26,7 +26,9 @@
   "url": "https://ajcardetailing.com",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "3982 Parkgate Dr",
     "addressLocality": "Mississauga",
+    "postalCode": "L5N 7B7",
     "addressRegion": "ON",
     "addressCountry": "CA"
   },
@@ -261,60 +263,6 @@
     text-transform: uppercase; letter-spacing: 0.1em;
   }
 
-  /* ---------- BEFORE / AFTER (signature) ---------- */
-  .ba-section { padding: 100px 48px; }
-  .ba {
-    position: relative; width: 100%; aspect-ratio: 16 / 9;
-    border-radius: 16px; overflow: hidden; background: var(--wash);
-    user-select: none; touch-action: pan-y;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.12);
-  }
-  .ba img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%; object-fit: cover; pointer-events: none;
-  }
-  .ba .after-layer {
-    position: absolute; inset: 0;
-    clip-path: inset(0 0 0 var(--pos, 50%));
-  }
-  .ba-badge {
-    position: absolute; top: 18px; z-index: 3;
-    font-size: 11px; font-weight: 800; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--white);
-    background: rgba(0,0,0,0.6); backdrop-filter: blur(6px);
-    padding: 7px 14px; border-radius: 4px;
-  }
-  .ba-badge.b { left: 18px; }
-  .ba-badge.a { right: 18px; background: rgba(214,40,40,0.85); }
-  .ba-line {
-    position: absolute; top: 0; bottom: 0; z-index: 4;
-    left: var(--pos, 50%); width: 3px; background: var(--white);
-    transform: translateX(-50%);
-    box-shadow: 0 0 18px rgba(0,0,0,0.45);
-    pointer-events: none;
-  }
-  .ba-knob {
-    position: absolute; top: 50%; left: var(--pos, 50%); z-index: 5;
-    transform: translate(-50%, -50%);
-    width: 54px; height: 54px; border-radius: 50%;
-    background: var(--white); color: var(--black);
-    display: grid; place-items: center;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
-    font-size: 15px; font-weight: 800; letter-spacing: -1px;
-    pointer-events: none;
-  }
-  .ba-range {
-    position: absolute; inset: 0; z-index: 6;
-    width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize;
-    -webkit-appearance: none; appearance: none; background: transparent;
-  }
-  .ba-range::-webkit-slider-thumb { -webkit-appearance: none; width: 60px; height: 100%; }
-  .ba-range::-moz-range-thumb { width: 60px; height: 100%; border: 0; background: transparent; }
-  .ba-hint {
-    margin-top: 14px; font-size: 13px; color: var(--gray); font-weight: 600;
-    display: flex; align-items: center; gap: 8px;
-  }
-
   /* ---------- AREA MARQUEE ---------- */
   .marquee {
     background: var(--black); color: var(--white);
@@ -338,8 +286,8 @@
   /* ---------- GALLERY ---------- */
   .gallery { padding: 100px 48px 90px; }
   .gallery-grid {
-    display: grid; grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 300px 300px; gap: 12px;
+    display: grid; grid-template-columns: 1.35fr 1fr 1.35fr;
+    grid-template-rows: 440px; gap: 12px;
   }
   .gallery-item {
     position: relative; border-radius: 14px; overflow: hidden;
@@ -357,10 +305,9 @@
     background: linear-gradient(transparent, rgba(0,0,0,0.7));
     font-size: 14px; font-weight: 700; color: var(--white);
   }
-  .g1 { grid-column: 1 / 3; grid-row: 1; }
-  .g2 { grid-column: 3; grid-row: 1; }
-  .g3 { grid-column: 1; grid-row: 2; }
-  .g4 { grid-column: 2 / 4; grid-row: 2; }
+  .g1 { grid-column: 1; }
+  .g2 { grid-column: 2; }
+  .g3 { grid-column: 3; }
 
   /* ---------- LIGHTBOX ---------- */
   .lightbox {
@@ -461,28 +408,6 @@
   .reviews-cta a { color: var(--red); font-weight: 700; text-decoration: none; }
   .reviews-cta a:hover { text-decoration: underline; }
 
-  /* ---------- FAQ ---------- */
-  .faq { padding: 100px 48px; background: var(--wash); }
-  .faq-list { max-width: 780px; }
-  .faq details {
-    border-bottom: 1px solid var(--line);
-    background: transparent;
-  }
-  .faq summary {
-    cursor: pointer; list-style: none;
-    padding: 22px 40px 22px 0; position: relative;
-    font-size: 17px; font-weight: 700; color: var(--black);
-  }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after {
-    content: '+'; position: absolute; right: 6px; top: 50%;
-    transform: translateY(-50%);
-    font-size: 26px; font-weight: 400; color: var(--red); line-height: 1;
-    transition: transform 0.3s ease;
-  }
-  .faq details[open] summary::after { content: '−'; }
-  .faq-body { padding: 0 40px 24px 0; font-size: 15px; color: var(--gray); font-weight: 500; }
-
   /* ---------- CTA ---------- */
   .cta-section {
     padding: 120px 48px; text-align: center;
@@ -537,27 +462,23 @@
     .hero-content { padding: 120px 20px 90px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .stat { border-bottom: 1px solid var(--line); }
-    .ba-section { padding: 70px 20px; }
-    .ba { aspect-ratio: 4 / 3; }
     .gallery { padding: 70px 20px 60px; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px 220px; gap: 10px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 260px 260px; gap: 10px; }
     .g1 { grid-column: 1 / 3; grid-row: 1; }
     .g2 { grid-column: 1; grid-row: 2; }
     .g3 { grid-column: 2; grid-row: 2; }
-    .g4 { grid-column: 1 / 3; grid-row: 3; }
     .packages-section { padding: 70px 20px; }
     .packages-grid { grid-template-columns: 1fr; gap: 26px; }
     .reviews { padding: 70px 20px; }
     .reviews-grid { grid-template-columns: 1fr; }
-    .faq { padding: 70px 20px; }
     .cta-section { padding: 80px 20px; }
     footer { padding: 32px 20px 96px; }
     .callbar { display: block; }
   }
   @media (max-width: 600px) {
-    .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 230px); }
-    .g1, .g2, .g3, .g4 { grid-column: 1; }
-    .g1 { grid-row: 1; } .g2 { grid-row: 2; } .g3 { grid-row: 3; } .g4 { grid-row: 4; }
+    .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 260px); }
+    .g1, .g2, .g3 { grid-column: 1; }
+    .g1 { grid-row: 1; } .g2 { grid-row: 2; } .g3 { grid-row: 3; }
     .stats { grid-template-columns: 1fr 1fr; }
   }
 
@@ -580,10 +501,9 @@
 <nav id="nav">
   <div class="logo">AJ <span>DETAILING</span></div>
   <div class="nav-links">
-    <a href="#work">Our Work</a>
+    <a href="#gallery">Our Work</a>
     <a href="#packages">Packages</a>
     <a href="#reviews">Reviews</a>
-    <a href="#faq">FAQ</a>
     <a href="tel:+14168935986" class="nav-cta">Call to Book</a>
   </div>
 </nav>
@@ -596,13 +516,13 @@
   <div class="hero-content">
     <div class="hero-tag"><span class="dot"></span> Open today · 9 AM – 7 PM</div>
     <h1><em><span class="l1">BEST IN</span><span class="l2">THE <span class="red">BUSINESS.</span></span></em></h1>
-    <p class="hero-sub">Hand detailing that comes to you. Mississauga and across the GTA, seven days a week.</p>
+    <p class="hero-sub">World-class hand detailing servicing Mississauga and the GTA. Seven days a week.</p>
     <div class="hero-actions">
       <a href="tel:+14168935986" class="btn-red">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         (416) 893-5986
       </a>
-      <a href="#work" class="btn-outline">See the difference ↓</a>
+      <a href="#gallery" class="btn-outline">See our work ↓</a>
     </div>
     <div class="hero-trust">
       <span class="stars">★★★★★</span> 5.0 across 195+ Google reviews
@@ -625,32 +545,9 @@
   </div>
   <div class="stat">
     <div class="stat-num">GTA</div>
-    <div class="stat-label">We Come to You</div>
+    <div class="stat-label">Areas Served</div>
   </div>
 </div>
-
-<!-- SIGNATURE: before / after -->
-<section class="ba-section" id="work">
-  <div class="wrap reveal">
-    <div class="section-tag">Before &amp; After</div>
-    <h2 class="section-title">DRAG IT.<br>SEE THE DIFFERENCE.</h2>
-    <p class="section-lede">Same car, same day. Pull the handle across to see what a full detail actually does.</p>
-
-    <div class="ba" id="ba" style="--pos:50%">
-      <img src="./images/preview-2.webp" alt="Car interior before detailing" loading="lazy" />
-      <div class="after-layer">
-        <img src="./images/preview-1.webp" alt="Car interior after detailing" loading="lazy" />
-      </div>
-      <span class="ba-badge b">Before</span>
-      <span class="ba-badge a">After</span>
-      <div class="ba-line"></div>
-      <div class="ba-knob">‹ ›</div>
-      <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50"
-             aria-label="Drag to compare before and after detailing" />
-    </div>
-    <p class="ba-hint">← Drag the handle, or use your arrow keys</p>
-  </div>
-</section>
 
 <div class="marquee" aria-label="Service areas">
   <div class="marquee-track" id="marquee">
@@ -665,23 +562,19 @@
   <div class="wrap reveal">
     <div class="section-tag">Our Work</div>
     <h2 class="section-title">RESULTS SPEAK<br>FOR THEMSELVES.</h2>
-    <p class="section-lede">Every car below was done by hand, on site. Tap any photo to view it full size.</p>
+    <p class="section-lede">Every car below was done by hand. Tap any photo to view it full size.</p>
     <div class="gallery-grid">
-      <button class="gallery-item g1" data-full="./images/preview.webp">
-        <img src="./images/preview.webp" alt="Exterior paint after detailing" loading="lazy" />
-        <span class="gallery-label">Exterior Detail</span>
+      <button class="gallery-item g1" data-full="./images/engine.webp">
+        <img src="./images/engine.webp" alt="Detailed engine bay" loading="lazy" />
+        <span class="gallery-label">Engine Bay</span>
       </button>
-      <button class="gallery-item g2" data-full="./images/preview-1.webp">
-        <img src="./images/preview-1.webp" alt="Vehicle interior after detailing" loading="lazy" />
-        <span class="gallery-label">Interior Detail</span>
+      <button class="gallery-item g2" data-full="./images/wheel.webp">
+        <img src="./images/wheel.webp" alt="Cleaned alloy wheel and tire" loading="lazy" />
+        <span class="gallery-label">Wheels &amp; Tires</span>
       </button>
-      <button class="gallery-item g3" data-full="./images/preview-2.webp">
-        <img src="./images/preview-2.webp" alt="Cleaned floor mats" loading="lazy" />
-        <span class="gallery-label">Floor &amp; Mats</span>
-      </button>
-      <button class="gallery-item g4" data-full="./images/preview-3.webp">
-        <img src="./images/preview-3.webp" alt="Dashboard after detailing" loading="lazy" />
-        <span class="gallery-label">Dashboard Detail</span>
+      <button class="gallery-item g3" data-full="./images/interior.webp">
+        <img src="./images/interior.webp" alt="Detailed vehicle interior and dashboard" loading="lazy" />
+        <span class="gallery-label">Interior &amp; Dash</span>
       </button>
     </div>
   </div>
@@ -843,51 +736,18 @@
   </div>
 </section>
 
-<section class="faq" id="faq">
-  <div class="wrap reveal">
-    <div class="section-tag">Questions</div>
-    <h2 class="section-title">BEFORE YOU CALL.</h2>
-    <div class="faq-list">
-      <details>
-        <summary>Do you come to me?</summary>
-        <div class="faq-body">Yes. We're fully mobile across Mississauga and the GTA — driveway, condo garage, or office parking lot. Tell us where the car will be when you call.</div>
-      </details>
-      <details>
-        <summary>Do you need my water or power?</summary>
-        <div class="faq-body">No. We bring our own water and power, so we can work anywhere the car is parked.</div>
-      </details>
-      <details>
-        <summary>How long does it take?</summary>
-        <div class="faq-body">Silver runs about an hour and a half. Gold is three to four hours. Platinum is a full day. Condition and vehicle size can move those numbers.</div>
-      </details>
-      <details>
-        <summary>What does it cost?</summary>
-        <div class="faq-body">Price depends on the vehicle, the package, and how much work the car actually needs. Call and describe the car — we'll quote it on the spot.</div>
-      </details>
-      <details>
-        <summary>How do I pay?</summary>
-        <div class="faq-body">Cash, e-transfer, or card on completion.</div>
-      </details>
-      <details>
-        <summary>How far ahead should I book?</summary>
-        <div class="faq-body">Weekends fill first. Two or three days ahead is usually enough, and same-day is often possible mid-week.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
 <section class="cta-section">
   <div class="cta-inner">
     <div class="section-tag">Ready?</div>
     <h2 class="section-title">LET'S MAKE IT<br><span class="red">SPOTLESS.</span></h2>
-    <p class="cta-sub">Call to book. Mississauga &amp; GTA. Open 7 days, 9 AM – 7 PM.</p>
+    <p class="cta-sub">Call to book. Open 7 days, 9 AM – 7 PM.</p>
     <a href="tel:+14168935986" class="cta-phone">(416) 893-5986</a>
     <br>
     <a href="tel:+14168935986" class="btn-red" style="margin-top:4px;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       Call to Book Now
     </a>
-    <p class="cta-details" style="margin-top:24px;">Mississauga, ON · Mobile service across the GTA</p>
+    <p class="cta-details" style="margin-top:24px;">3982 Parkgate Dr, Mississauga, ON · Serving the GTA</p>
   </div>
 </section>
 
@@ -895,7 +755,7 @@
 
 <footer>
   <div class="logo">AJ <span>DETAILING</span></div>
-  <div class="footer-info">© 2026 AJ Car Detailing · Mississauga, ON · (416) 893-5986</div>
+  <div class="footer-info">© 2026 AJ Car Detailing · 3982 Parkgate Dr, Mississauga, ON · (416) 893-5986</div>
 </footer>
 
 <div class="callbar">
@@ -956,15 +816,6 @@
     });
   }, { threshold: 0.6 });
   document.querySelectorAll('[data-count]').forEach(function (el) { counted.observe(el); });
-
-  /* before / after */
-  var ba = document.getElementById('ba');
-  var range = document.getElementById('baRange');
-  if (ba && range) {
-    range.addEventListener('input', function () {
-      ba.style.setProperty('--pos', range.value + '%');
-    });
-  }
 
   /* marquee: duplicate track so the loop is seamless */
   var mq = document.getElementById('marquee');

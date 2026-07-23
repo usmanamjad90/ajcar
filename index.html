@@ -286,8 +286,8 @@
   /* ---------- GALLERY ---------- */
   .gallery { padding: 100px 48px 90px; }
   .gallery-grid {
-    display: grid; grid-template-columns: 1.35fr 1fr 1.35fr;
-    grid-template-rows: 440px; gap: 12px;
+    display: grid; grid-template-columns: 1fr 1fr 0.8fr;
+    grid-template-rows: 320px 320px; gap: 12px;
   }
   .gallery-item {
     position: relative; border-radius: 14px; overflow: hidden;
@@ -305,9 +305,10 @@
     background: linear-gradient(transparent, rgba(0,0,0,0.7));
     font-size: 14px; font-weight: 700; color: var(--white);
   }
-  .g1 { grid-column: 1; }
-  .g2 { grid-column: 2; }
-  .g3 { grid-column: 3; }
+  .g1 { grid-column: 1 / 3; grid-row: 1; }
+  .g2 { grid-column: 3; grid-row: 1; }
+  .g3 { grid-column: 1; grid-row: 2; }
+  .g4 { grid-column: 2 / 4; grid-row: 2; }
 
   /* ---------- LIGHTBOX ---------- */
   .lightbox {
@@ -463,10 +464,11 @@
     .stats { grid-template-columns: repeat(2, 1fr); }
     .stat { border-bottom: 1px solid var(--line); }
     .gallery { padding: 70px 20px 60px; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 260px 260px; gap: 10px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; gap: 10px; }
     .g1 { grid-column: 1 / 3; grid-row: 1; }
     .g2 { grid-column: 1; grid-row: 2; }
     .g3 { grid-column: 2; grid-row: 2; }
+    .g4 { grid-column: 1 / 3; grid-row: 3; }
     .packages-section { padding: 70px 20px; }
     .packages-grid { grid-template-columns: 1fr; gap: 26px; }
     .reviews { padding: 70px 20px; }
@@ -476,9 +478,9 @@
     .callbar { display: block; }
   }
   @media (max-width: 600px) {
-    .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 260px); }
-    .g1, .g2, .g3 { grid-column: 1; }
-    .g1 { grid-row: 1; } .g2 { grid-row: 2; } .g3 { grid-row: 3; }
+    .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 250px); }
+    .g1, .g2, .g3, .g4 { grid-column: 1; }
+    .g1 { grid-row: 1; } .g2 { grid-row: 2; } .g3 { grid-row: 3; } .g4 { grid-row: 4; }
     .stats { grid-template-columns: 1fr 1fr; }
   }
 
@@ -564,15 +566,19 @@
     <h2 class="section-title">RESULTS SPEAK<br>FOR THEMSELVES.</h2>
     <p class="section-lede">Every car below was done by hand. Tap any photo to view it full size.</p>
     <div class="gallery-grid">
-      <button class="gallery-item g1" data-full="./images/engine.webp">
-        <img src="./images/engine.webp" alt="Detailed engine bay" loading="lazy" />
-        <span class="gallery-label">Engine Bay</span>
+      <button class="gallery-item g1" data-full="./images/exterior.webp">
+        <img src="./images/exterior.webp" alt="Detailed Mercedes exterior" loading="lazy" />
+        <span class="gallery-label">Full Exterior</span>
       </button>
       <button class="gallery-item g2" data-full="./images/wheel.webp">
         <img src="./images/wheel.webp" alt="Cleaned alloy wheel and tire" loading="lazy" />
         <span class="gallery-label">Wheels &amp; Tires</span>
       </button>
-      <button class="gallery-item g3" data-full="./images/interior.webp">
+      <button class="gallery-item g3" data-full="./images/engine.webp">
+        <img src="./images/engine.webp" alt="Detailed engine bay" loading="lazy" />
+        <span class="gallery-label">Engine Bay</span>
+      </button>
+      <button class="gallery-item g4" data-full="./images/interior.webp">
         <img src="./images/interior.webp" alt="Detailed vehicle interior and dashboard" loading="lazy" />
         <span class="gallery-label">Interior &amp; Dash</span>
       </button>
@@ -642,11 +648,11 @@
     <div class="reviews-grid">
       <div class="review">
         <div class="review-stars">★★★★★</div>
-        <p class="review-text">The reviews and photos before me are completely accurate. The guy was really nice and I would 100% go to him again and recommend him to others. The seats were covered in dog fur, dog drool, juice stains, etc. and he got them all right out. Amazing work.</p>
+        <p class="review-text">My daughter was getting married and I needed to get the interior of my 2 cars cleaned. Needless to say, AJ did an awesome job!! My 2016 car had tons of road salt in the carpet -- when he was done, it looked like a new car! For my car (my daughter and her big wedding dress was going to ride in it), AJ did some extra cleaning at no cost!&hellip; I highly recommend you see AJ for your car detailing -- you will not be disappointed (his prices are very reasonable too). I will definitely be back!</p>
         <div class="review-author">
           <div class="review-avatar">J</div>
           <div>
-            <div class="review-who">Jennifer D.</div>
+            <div class="review-who">Jan J.</div>
             <div class="review-src">Google Review</div>
           </div>
         </div>
